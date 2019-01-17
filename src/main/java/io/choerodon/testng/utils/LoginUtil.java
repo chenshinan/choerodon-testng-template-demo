@@ -47,7 +47,7 @@ public class LoginUtil {
             ResponseEntity<Object> clientOauth = restTemplate.exchange(url, HttpMethod.GET, authRequest, Object.class);
             String location = clientOauth.getHeaders().get("location").get(0);
             accessToken = location.split("#access_token=")[1].split("&token_type")[0];
-            logger.error("login:登录认证成功");
+            logger.info("login:登录认证成功");
         } catch (Exception e) {
             logger.error("login:登录认证失败");
             e.printStackTrace();

@@ -22,3 +22,9 @@ target/
 /temp
 /tmp
 app.jar
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+gitlabci/.generated

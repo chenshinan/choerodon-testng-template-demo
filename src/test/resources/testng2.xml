@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite1" verbose="1" >
+    <test name="test1">
+        <classes>
+            <class name="io.choerodon.testng.testUnit.UnitTest"/>
+        </classes>
+    </test>
+
+</suite>
