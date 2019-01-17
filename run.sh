@@ -1,2 +1,2 @@
 #!/bin/sh
-mvn test
+java -jar app.jar

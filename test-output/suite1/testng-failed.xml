@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [suite1]">
+  <listeners>
+    <listener class-name="io.choerodon.testng.listener.LogTestListener"/>
+  </listeners>
   <test name="test2(failed)">
     <classes>
       <class name="io.choerodon.testng.testApi.ApiTest">

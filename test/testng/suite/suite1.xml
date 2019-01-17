@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite1" verbose="1">
+    <listeners>
+        <listener class-name="io.choerodon.testng.listener.LogTestListener"/>
+    </listeners>
+    <test name="test1">
+        <classes>
+            <class name="io.choerodon.testng.testUnit.UnitTest"/>
+        </classes>
+    </test>
+    <test name="test2">
+        <classes>
+            <class name="io.choerodon.testng.testApi.ApiTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="test3">
+        <parameter name="db" value="mysql"/>
+        <groups>
+            <run>
+                <include name="linux"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="io.choerodon.testng.testUnit.GroupTest"/>
+        </classes>
+    </test>
+</suite>
