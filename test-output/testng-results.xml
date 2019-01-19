@@ -1,297 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="24" passed="22">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
     <line>
-      <![CDATA[输入参数：1]]>
+      <![CDATA[/Users/chenshinan/work/java/handspace/choerodon/choerodon-testng-template/app-tests.jar]]>
+    </line>
+    <line>
+      <![CDATA[Parse profile.....]]>
+    </line>
+    <line>
+      <![CDATA[TestConfigure{username='AutomationTestUser', password='123456', apiGateway='http://api.staging.saas.hand-china.com', domainUri='http://service.choerodon.staging.saas.hand-china.com'}]]>
+    </line>
+    <line>
+      <![CDATA[Start login.....]]>
+    </line>
+    <line>
+      <![CDATA[Get cookie successfully：3abb35e6-cac6-4b98-9ecd-1ab28cc3f401]]>
+    </line>
+    <line>
+      <![CDATA[Token token success：bearer d4d033d1-1ccf-4263-b380-4c352605c927]]>
+    </line>
+    <line>
+      <![CDATA[Login authentication successful]]>
+    </line>
+    <line>
+      <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
+    </line>
+    <line>
+      <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
+    </line>
+    <line>
+      <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
+    </line>
+    <line>
+      <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
     </line>
   </reporter-output>
-  <suite name="suite2" duration-ms="16" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
+  <suite name="suite2" duration-ms="905" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
     <groups>
     </groups>
-    <test name="test4" duration-ms="7" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-      <class name="io.choerodon.testng.testUnit.AnnotationTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
+    <test name="testConfigure2" duration-ms="905" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
+      <class name="io.choerodon.testng.test.ApiTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClassTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeClassTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClassTest -->
-        <test-method status="PASS" signature="beforeMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethodTest -->
-        <test-method status="PASS" signature="afterMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethodTest -->
-        <test-method status="PASS" signature="dataProviderTest(java.lang.String, java.lang.Integer)[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="dataProviderTest" duration-ms="0" started-at="2019-01-17T15:45:04Z" data-provider="dataProvider" finished-at="2019-01-17T15:45:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Anne]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[37]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataProviderTest -->
-        <test-method status="PASS" signature="afterMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterMethodTest" is-config="true" duration-ms="1" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethodTest -->
-        <test-method status="PASS" signature="dataProviderTest(java.lang.String, java.lang.Integer)[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="dataProviderTest" duration-ms="0" started-at="2019-01-17T15:45:04Z" data-provider="dataProvider" finished-at="2019-01-17T15:45:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Cedric]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[36]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataProviderTest -->
-        <test-method status="PASS" signature="beforeMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethodTest -->
-        <test-method status="PASS" signature="dataProviderTest(java.lang.String, java.lang.Integer)[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="dataProviderTest" duration-ms="0" started-at="2019-01-17T15:45:04Z" data-provider="dataProvider" finished-at="2019-01-17T15:45:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chen]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[25]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataProviderTest -->
-        <test-method status="PASS" signature="afterMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethodTest -->
-        <test-method status="PASS" signature="afterMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethodTest -->
-        <test-method status="PASS" signature="dataProviderTest(java.lang.String, java.lang.Integer)[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="dataProviderTest" duration-ms="0" started-at="2019-01-17T15:45:04Z" data-provider="dataProvider" finished-at="2019-01-17T15:45:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Jay]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[30]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataProviderTest -->
-        <test-method status="PASS" signature="beforeMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethodTest -->
-        <test-method status="PASS" signature="beforeMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethodTest -->
-        <test-method status="PASS" signature="dependsOnMethodsTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="dependsOnMethodsTest" duration-ms="0" started-at="2019-01-17T15:45:04Z" depends-on-methods="io.choerodon.testng.testUnit.AnnotationTest.dataProviderTest" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dependsOnMethodsTest -->
-        <test-method status="PASS" signature="beforeMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeMethodTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethodTest -->
-        <test-method status="PASS" signature="afterMethodTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterMethodTest" is-config="true" duration-ms="1" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethodTest -->
-        <test-method status="PASS" signature="afterClassTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterClassTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClassTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- io.choerodon.testng.testUnit.AnnotationTest -->
-    </test> <!-- test4 -->
-    <test name="test5" duration-ms="3" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-      <class name="io.choerodon.testng.testUnit.FactoryTestIntance">
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@20312893]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@2a7b6f69]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@213e3629]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@3113a37]" name="testServer" duration-ms="1" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@4e9658b5]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@52eacb4b]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@54ec8cc9]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@70eecdc2]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@c41709a]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-        <test-method status="PASS" signature="testServer()[pri:0, instance:io.choerodon.testng.testUnit.FactoryTestIntance@7db0565c]" name="testServer" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testServer -->
-      </class> <!-- io.choerodon.testng.testUnit.FactoryTestIntance -->
-    </test> <!-- test5 -->
-    <test name="test6" duration-ms="2" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-      <class name="io.choerodon.testng.testUnit.AnnotationTest">
-        <test-method status="PASS" signature="beforeSuiteTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="beforeSuiteTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuiteTest -->
-        <test-method status="PASS" signature="afterSuiteTest()[pri:0, instance:io.choerodon.testng.testUnit.AnnotationTest@5be82d43]" name="afterSuiteTest" is-config="true" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuiteTest -->
-      </class> <!-- io.choerodon.testng.testUnit.AnnotationTest -->
-      <class name="io.choerodon.testng.testUnit.ParallelTest">
-        <test-method status="PASS" signature="parallelTest2()[pri:0, instance:io.choerodon.testng.testUnit.ParallelTest@6cc0bcf6]" name="parallelTest2" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- parallelTest2 -->
-        <test-method status="PASS" signature="parallelTest3()[pri:0, instance:io.choerodon.testng.testUnit.ParallelTest@6cc0bcf6]" name="parallelTest3" duration-ms="1" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- parallelTest3 -->
-        <test-method status="PASS" signature="parallelTest1()[pri:0, instance:io.choerodon.testng.testUnit.ParallelTest@6cc0bcf6]" name="parallelTest1" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- parallelTest1 -->
-      </class> <!-- io.choerodon.testng.testUnit.ParallelTest -->
-    </test> <!-- test6 -->
-  </suite> <!-- suite2 -->
-  <suite name="suite1" duration-ms="35" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-    <groups>
-      <group name="linux">
-        <method signature="GroupTest.groupTest1()[pri:0, instance:io.choerodon.testng.testUnit.GroupTest@1827a871]" name="groupTest1" class="io.choerodon.testng.testUnit.GroupTest"/>
-        <method signature="GroupTest.groupTest3(java.lang.String)[pri:0, instance:io.choerodon.testng.testUnit.GroupTest@1827a871]" name="groupTest3" class="io.choerodon.testng.testUnit.GroupTest"/>
-      </group> <!-- linux -->
-      <group name="windows">
-        <method signature="GroupTest.groupTest1()[pri:0, instance:io.choerodon.testng.testUnit.GroupTest@1827a871]" name="groupTest1" class="io.choerodon.testng.testUnit.GroupTest"/>
-      </group> <!-- windows -->
-    </groups>
-    <test name="test1" duration-ms="13" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-      <class name="io.choerodon.testng.testUnit.UnitTest">
-        <test-method status="PASS" signature="isEmpty()[pri:0, instance:io.choerodon.testng.testUnit.UnitTest@702ed190]" name="isEmpty" duration-ms="4" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- isEmpty -->
-        <test-method status="PASS" signature="trim()[pri:0, instance:io.choerodon.testng.testUnit.UnitTest@702ed190]" name="trim" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- trim -->
-      </class> <!-- io.choerodon.testng.testUnit.UnitTest -->
-    </test> <!-- test1 -->
-    <test name="test2" duration-ms="2" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-      <class name="io.choerodon.testng.testApi.ApiTest">
-        <test-method status="FAIL" signature="userSelf()[pri:0, instance:io.choerodon.testng.testApi.ApiTest@6c4f9535]" name="userSelf" duration-ms="0" started-at="2019-01-17T15:45:04Z" description="登录后测试userSelf" finished-at="2019-01-17T15:45:04Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at io.choerodon.testng.testApi.ApiTest.userSelf(ApiTest.java:25)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1297)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at io.choerodon.TestNgApplication.main(TestNgApplication.java:29)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="queryWiki()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="queryWiki" duration-ms="491" started-at="2019-01-18T09:37:27Z" description="查询Wiki" finished-at="2019-01-18T09:37:27Z">
           <reporter-output>
             <line>
-              <![CDATA[输入参数：1]]>
+              <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
             </line>
           </reporter-output>
-        </test-method> <!-- userSelf -->
-      </class> <!-- io.choerodon.testng.testApi.ApiTest -->
-    </test> <!-- test2 -->
-    <test name="test3" duration-ms="3" started-at="2019-01-17T07:45:04Z" finished-at="2019-01-17T07:45:04Z">
-      <class name="io.choerodon.testng.testUnit.GroupTest">
-        <test-method status="PASS" signature="groupTest1()[pri:0, instance:io.choerodon.testng.testUnit.GroupTest@1827a871]" name="groupTest1" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
+        </test-method> <!-- queryWiki -->
+        <test-method status="PASS" signature="queryOther()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="queryOther" duration-ms="413" started-at="2019-01-18T09:37:27Z" description="查询Wiki" finished-at="2019-01-18T09:37:27Z">
+          <reporter-output>
+            <line>
+              <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- queryOther -->
+      </class> <!-- io.choerodon.testng.test.ApiTest -->
+    </test> <!-- testConfigure2 -->
+  </suite> <!-- suite2 -->
+  <suite name="suite1" duration-ms="4533" started-at="2019-01-18T09:37:22Z" finished-at="2019-01-18T09:37:26Z">
+    <groups>
+    </groups>
+    <test name="testConfigure1" duration-ms="4533" started-at="2019-01-18T09:37:22Z" finished-at="2019-01-18T09:37:26Z">
+      <class name="io.choerodon.testng.test.ApiTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="beforeClass" is-config="true" duration-ms="3292" started-at="2019-01-18T09:37:22Z" finished-at="2019-01-18T09:37:25Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Parse profile.....]]>
+            </line>
+            <line>
+              <![CDATA[TestConfigure{username='AutomationTestUser', password='123456', apiGateway='http://api.staging.saas.hand-china.com', domainUri='http://service.choerodon.staging.saas.hand-china.com'}]]>
+            </line>
+            <line>
+              <![CDATA[Start login.....]]>
+            </line>
+            <line>
+              <![CDATA[Get cookie successfully：3abb35e6-cac6-4b98-9ecd-1ab28cc3f401]]>
+            </line>
+            <line>
+              <![CDATA[Token token success：bearer d4d033d1-1ccf-4263-b380-4c352605c927]]>
+            </line>
+            <line>
+              <![CDATA[Login authentication successful]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-18T09:37:25Z" finished-at="2019-01-18T09:37:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- groupTest1 -->
-        <test-method status="PASS" signature="groupTest3(java.lang.String)[pri:0, instance:io.choerodon.testng.testUnit.GroupTest@1827a871]" name="groupTest3" duration-ms="0" started-at="2019-01-17T15:45:04Z" finished-at="2019-01-17T15:45:04Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[mysql]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="queryWiki()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="queryWiki" duration-ms="775" started-at="2019-01-18T09:37:25Z" description="查询Wiki" finished-at="2019-01-18T09:37:26Z">
           <reporter-output>
+            <line>
+              <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- groupTest3 -->
-      </class> <!-- io.choerodon.testng.testUnit.GroupTest -->
-    </test> <!-- test3 -->
+        </test-method> <!-- queryWiki -->
+        <test-method status="PASS" signature="queryOther()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="queryOther" duration-ms="455" started-at="2019-01-18T09:37:26Z" description="查询Wiki" finished-at="2019-01-18T09:37:26Z">
+          <reporter-output>
+            <line>
+              <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- queryOther -->
+      </class> <!-- io.choerodon.testng.test.ApiTest -->
+    </test> <!-- testConfigure1 -->
   </suite> <!-- suite1 -->
-  <suite name="-" duration-ms="0" started-at="2019-01-17T07:45:05Z" finished-at="2019-01-17T07:45:05Z">
+  <suite name="-" duration-ms="0" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
     <groups>
     </groups>
   </suite> <!-- - -->

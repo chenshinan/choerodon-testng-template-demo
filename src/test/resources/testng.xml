@@ -1,47 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="suite1" verbose="1">
-    <listeners>
-        <listener class-name="io.choerodon.testng.listener.LogTestListener"/>
-    </listeners>
-    <test name="test1">
-        <classes>
-            <class name="io.choerodon.testng.testUnit.UnitTest"/>
-        </classes>
-    </test>
-    <test name="test2">
-        <classes>
-            <class name="io.choerodon.testng.testApi.ApiTest">
-                <methods>
-                    <include name="login"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="test3">
-        <parameter name="db" value="mysql"/>
-        <groups>
-            <run>
-                <include name="linux"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="io.choerodon.testng.testUnit.GroupTest"/>
-        </classes>
-    </test>
-    <test name="test4">
-        <classes>
-            <class name="io.choerodon.testng.testUnit.AnnotationTest"/>
-        </classes>
-    </test>
-    <test name="test5">
-        <classes>
-            <class name="io.choerodon.testng.testUnit.FactoryTest"/>
-        </classes>
-    </test>
-    <test name="test6" parallel="methods" thread-count="3">
-        <classes>
-            <class name="io.choerodon.testng.testUnit.ParallelTest"/>
-        </classes>
-    </test>
+<suite name="-">
+    <suite-files >
+        <!--模块1-->
+        <suite-file path="suite/suite1.xml"></suite-file>
 
+        <!--模块2-->
+        <suite-file path="suite/suite2.xml"></suite-file>
+
+    </suite-files>
 </suite>
