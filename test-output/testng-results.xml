@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
     <line>
       <![CDATA[/Users/chenshinan/work/java/handspace/choerodon/choerodon-testng-template/app-tests.jar]]>
@@ -14,10 +14,10 @@
       <![CDATA[Start login.....]]>
     </line>
     <line>
-      <![CDATA[Get cookie successfully：3abb35e6-cac6-4b98-9ecd-1ab28cc3f401]]>
+      <![CDATA[Get cookie successfully：769a2f67-53b9-4721-b084-fb8a766f93e4]]>
     </line>
     <line>
-      <![CDATA[Token token success：bearer d4d033d1-1ccf-4263-b380-4c352605c927]]>
+      <![CDATA[Token token success：bearer 9cbb8267-3db9-4ef4-9711-cfe4cba88245]]>
     </line>
     <line>
       <![CDATA[Login authentication successful]]>
@@ -28,49 +28,32 @@
     <line>
       <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
     </line>
-    <line>
-      <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
-    </line>
-    <line>
-      <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
-    </line>
   </reporter-output>
-  <suite name="suite2" duration-ms="905" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
+  <suite name="suite2" duration-ms="168" started-at="2019-01-19T04:34:59Z" finished-at="2019-01-19T04:34:59Z">
     <groups>
     </groups>
-    <test name="testConfigure2" duration-ms="905" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
+    <test name="testConfigure2" duration-ms="168" started-at="2019-01-19T04:34:59Z" finished-at="2019-01-19T04:34:59Z">
       <class name="io.choerodon.testng.test.ApiTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest@47fd17e3]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-01-19T04:34:59Z" finished-at="2019-01-19T04:34:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="queryWiki()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="queryWiki" duration-ms="491" started-at="2019-01-18T09:37:27Z" description="查询Wiki" finished-at="2019-01-18T09:37:27Z">
+        <test-method status="PASS" signature="queryWiki()[pri:0, instance:io.choerodon.testng.test.ApiTest@47fd17e3]" name="queryWiki" duration-ms="168" started-at="2019-01-19T04:34:59Z" description="查询Wiki" finished-at="2019-01-19T04:34:59Z">
           <reporter-output>
             <line>
               <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
             </line>
           </reporter-output>
         </test-method> <!-- queryWiki -->
-        <test-method status="PASS" signature="queryOther()[pri:0, instance:io.choerodon.testng.test.ApiTest@3aa9e816]" name="queryOther" duration-ms="413" started-at="2019-01-18T09:37:27Z" description="查询Wiki" finished-at="2019-01-18T09:37:27Z">
-          <reporter-output>
-            <line>
-              <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- queryOther -->
       </class> <!-- io.choerodon.testng.test.ApiTest -->
     </test> <!-- testConfigure2 -->
   </suite> <!-- suite2 -->
-  <suite name="suite1" duration-ms="4533" started-at="2019-01-18T09:37:22Z" finished-at="2019-01-18T09:37:26Z">
+  <suite name="suite1" duration-ms="2782" started-at="2019-01-19T04:34:56Z" finished-at="2019-01-19T04:34:59Z">
     <groups>
     </groups>
-    <test name="testConfigure1" duration-ms="4533" started-at="2019-01-18T09:37:22Z" finished-at="2019-01-18T09:37:26Z">
+    <test name="testConfigure1" duration-ms="2782" started-at="2019-01-19T04:34:56Z" finished-at="2019-01-19T04:34:59Z">
       <class name="io.choerodon.testng.test.ApiTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="beforeClass" is-config="true" duration-ms="3292" started-at="2019-01-18T09:37:22Z" finished-at="2019-01-18T09:37:25Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest@1ff8b8f]" name="beforeClass" is-config="true" duration-ms="1764" started-at="2019-01-19T04:34:56Z" finished-at="2019-01-19T04:34:58Z">
           <reporter-output>
             <line>
               <![CDATA[Parse profile.....]]>
@@ -82,38 +65,37 @@
               <![CDATA[Start login.....]]>
             </line>
             <line>
-              <![CDATA[Get cookie successfully：3abb35e6-cac6-4b98-9ecd-1ab28cc3f401]]>
+              <![CDATA[Get cookie successfully：769a2f67-53b9-4721-b084-fb8a766f93e4]]>
             </line>
             <line>
-              <![CDATA[Token token success：bearer d4d033d1-1ccf-4263-b380-4c352605c927]]>
+              <![CDATA[Token token success：bearer 9cbb8267-3db9-4ef4-9711-cfe4cba88245]]>
             </line>
             <line>
               <![CDATA[Login authentication successful]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="setUp" is-config="true" duration-ms="0" started-at="2019-01-18T09:37:25Z" finished-at="2019-01-18T09:37:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="queryWiki()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="queryWiki" duration-ms="775" started-at="2019-01-18T09:37:25Z" description="查询Wiki" finished-at="2019-01-18T09:37:26Z">
+        <test-method status="PASS" signature="queryWiki()[pri:0, instance:io.choerodon.testng.test.ApiTest@1ff8b8f]" name="queryWiki" duration-ms="763" started-at="2019-01-19T04:34:58Z" description="查询Wiki" finished-at="2019-01-19T04:34:58Z">
           <reporter-output>
             <line>
               <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
             </line>
           </reporter-output>
         </test-method> <!-- queryWiki -->
-        <test-method status="PASS" signature="queryOther()[pri:0, instance:io.choerodon.testng.test.ApiTest@224aed64]" name="queryOther" duration-ms="455" started-at="2019-01-18T09:37:26Z" description="查询Wiki" finished-at="2019-01-18T09:37:26Z">
-          <reporter-output>
-            <line>
-              <![CDATA[{"wikiRelationList":[],"wikiHost":"http://xwiki.staging.saas.hand-china.com"}]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- queryOther -->
       </class> <!-- io.choerodon.testng.test.ApiTest -->
+      <class name="io.choerodon.testng.test.ApiTest2">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:io.choerodon.testng.test.ApiTest2@387c703b]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-01-19T04:34:58Z" finished-at="2019-01-19T04:34:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="querySelf()[pri:0, instance:io.choerodon.testng.test.ApiTest2@387c703b]" name="querySelf" duration-ms="242" started-at="2019-01-19T04:34:58Z" description="登录后查询用户" finished-at="2019-01-19T04:34:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- querySelf -->
+      </class> <!-- io.choerodon.testng.test.ApiTest2 -->
     </test> <!-- testConfigure1 -->
   </suite> <!-- suite1 -->
-  <suite name="-" duration-ms="0" started-at="2019-01-18T09:37:27Z" finished-at="2019-01-18T09:37:27Z">
+  <suite name="-" duration-ms="0" started-at="2019-01-19T04:34:59Z" finished-at="2019-01-19T04:34:59Z">
     <groups>
     </groups>
   </suite> <!-- - -->

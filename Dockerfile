@@ -1,5 +1,6 @@
 FROM registry.cn-hangzhou.aliyuncs.com/choerodon-tools/javabase:0.5.0
-COPY . /app
+COPY app-tests.jar /app/
+COPY run.sh /app/
 WORKDIR /app
 RUN chmod +x run.sh
 ENTRYPOINT ["./run.sh"]

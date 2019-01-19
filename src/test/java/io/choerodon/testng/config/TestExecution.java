@@ -8,14 +8,13 @@ import java.net.URLDecoder;
 
 
 /**
+ * 此类用于jar包运行
+ *
  * @author dinghuang123@gmail.com
  * @since 2019/1/18
  */
 public class TestExecution {
 
-    /**
-     * 此类用于jar包运行
-     */
     public static void main(String[] args) {
         URL url = TestExecution.class.getProtectionDomain().getCodeSource().getLocation();
         String filePath = null;

@@ -21,7 +21,8 @@ target/
 *.tmp
 /temp
 /tmp
-app.jar
+test-output
+app-tests.jar
 
 # system ignore
 .DS_Store

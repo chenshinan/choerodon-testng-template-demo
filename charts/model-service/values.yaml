@@ -11,6 +11,14 @@ image:
 config:
   port: 8080
 
+env:
+  open:
+    RESULTGATEWAY: localhost:8080
+    APIGATEWAY: http://api.staging.saas.hand-china.com
+    DOMAINURI: http://service.choerodon.staging.saas.hand-china.com
+    LOGINNAME: AutomationTestUser
+    PASSWORD: 123456
+
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little

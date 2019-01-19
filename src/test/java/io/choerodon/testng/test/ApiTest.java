@@ -22,17 +22,13 @@ import static io.restassured.RestAssured.given;
 @Test
 public class ApiTest extends TestBase {
 
-    @BeforeClass
-    public void setUp() {
-    }
-
     @Test(description = "查询Wiki")
     public void queryWiki() {
         //状态码验证
         Response response = given().accept(ContentType.JSON).
                 contentType(ContentType.JSON).
                 get("/agile/v1/projects/340/wiki_relation/issue/16389").then().extract().response();
-        if (response.getStatusCode() == 201) {
+        if (response.getStatusCode() == 200) {
             System.out.println("访问成功");
         }
         Reporter.log(response.asString());
@@ -43,16 +39,5 @@ public class ApiTest extends TestBase {
         //判断响应时间是否少于预期值。
         response.then().time(lessThan(2000L), SECONDS);
 
-    }
-
-    @Test(description = "查询Wiki")
-    public void queryOther() {
-        //状态码验证
-        Response response = given().accept(ContentType.JSON).
-                contentType(ContentType.JSON).
-                get("/iam/v1/users/self").then().extract().response();
-        if (response.getStatusCode() == 200) {
-            System.out.println("访问成功");
-        }
     }
 }

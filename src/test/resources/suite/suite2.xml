@@ -2,13 +2,7 @@
 <suite name="suite2" verbose="2" >
     <test name="testConfigure2" parallel="false">
         <classes>
-            <class name="io.choerodon.testng.config.TestBase"/>
-            <class name="io.choerodon.testng.test.ApiTest">
-                <methods>
-                    <include name="queryWiki"/>
-                    <include name="queryOther"/>
-                </methods>
-            </class>
+            <class name="io.choerodon.testng.test.ApiTest"></class>
         </classes>
     </test>
 </suite>
