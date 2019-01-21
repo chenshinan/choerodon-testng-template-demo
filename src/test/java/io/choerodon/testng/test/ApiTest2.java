@@ -20,6 +20,7 @@ import static org.hamcrest.Matchers.lessThan;
  */
 @Test
 public class ApiTest2 extends TestBase {
+
     @Test(description = "登录后查询用户")
     public void querySelf() {
         //状态码验证
