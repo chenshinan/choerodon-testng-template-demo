@@ -1,6 +1,7 @@
 package io.choerodon.testng.test;
 
 import io.choerodon.testng.config.TestBase;
+import io.choerodon.testng.utils.ReporterUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Reporter;
@@ -24,6 +25,10 @@ public class ApiTest extends TestBase {
 
     @Test(description = "查询Wiki")
     public void queryWiki() {
+        //测试数据
+        ReporterUtil.inputData("传入issueId=16389");
+        //预期结果
+        ReporterUtil.expectData("查询成功");
         //状态码验证
         Response response = given().accept(ContentType.JSON).
                 contentType(ContentType.JSON).
@@ -31,7 +36,6 @@ public class ApiTest extends TestBase {
         if (response.getStatusCode() == 200) {
             System.out.println("访问成功");
         }
-        Reporter.log(response.asString());
         //验证
         response.then().body("wikiHost", equalTo("http://xwiki.staging.saas.hand-china.com"));
         //格式化打印JSON数据

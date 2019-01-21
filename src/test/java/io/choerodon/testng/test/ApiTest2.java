@@ -1,6 +1,7 @@
 package io.choerodon.testng.test;
 
 import io.choerodon.testng.config.TestBase;
+import io.choerodon.testng.utils.ReporterUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Reporter;
@@ -23,6 +24,10 @@ public class ApiTest2 extends TestBase {
 
     @Test(description = "登录后查询用户")
     public void querySelf() {
+        //测试数据
+        ReporterUtil.inputData("无");
+        //预期结果
+        ReporterUtil.expectData("无");
         //状态码验证
         Response response = given().accept(ContentType.JSON).
                 contentType(ContentType.JSON).

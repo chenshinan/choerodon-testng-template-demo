@@ -49,7 +49,7 @@ public class TestConfigureParse {
                             testConfigure = yaml.loadAs(inputStream, TestConfigure.class);
                         }
                     } catch (FileNotFoundException e) {
-                        Reporter.log("The configuration file configure.yaml could not be found" + e, true);
+                        System.out.println("The configuration file configure.yaml could not be found" + e);
                     }
                 }
                 //读取环境变量

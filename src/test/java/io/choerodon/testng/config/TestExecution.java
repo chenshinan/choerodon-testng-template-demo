@@ -26,7 +26,6 @@ public class TestExecution {
         }
         // 可执行jar包运行的结果里包含".jar"
         System.out.println("jar location:"+filePath);
-        Reporter.log(filePath);
         TestNG testNG = new TestNG();
         testNG.setTestJar(filePath);
         // 默认testng.xml
