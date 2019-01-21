@@ -1,11 +1,18 @@
 package io.choerodon.testng.utils;
 
 import io.choerodon.testng.config.domain.TestConfigure;
+import org.apache.commons.lang3.StringUtils;
 import org.testng.Reporter;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.net.URL;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * @author dinghuang123@gmail.com
@@ -24,6 +31,7 @@ public class TestConfigureParse {
             if (testConfigure != null) {
                 return testConfigure;
             } else {
+                //读取yaml
                 Yaml yaml = new Yaml();
                 URL url = TestConfigureParse.class.getClassLoader().getResource(FILE_NAME);
                 if (url == null) {
@@ -32,10 +40,10 @@ public class TestConfigureParse {
                     try {
                         String filePath = url.getPath();
                         File file = new File(filePath);
-                        if(file.exists()){
+                        if (file.exists()) {
                             FileInputStream fileInputStream = new FileInputStream(file);
                             testConfigure = yaml.loadAs(fileInputStream, TestConfigure.class);
-                        }else{
+                        } else {
                             //jar包中读取
                             InputStream inputStream = TestConfigureParse.class.getClassLoader().getResourceAsStream(FILE_NAME);
                             testConfigure = yaml.loadAs(inputStream, TestConfigure.class);
@@ -44,9 +52,21 @@ public class TestConfigureParse {
                         Reporter.log("The configuration file configure.yaml could not be found" + e, true);
                     }
                 }
+                //读取环境变量
+                for (Field field : TestConfigure.class.getDeclaredFields()) {
+                    field.setAccessible(true);
+                    String fieldName = field.getName();
+                    String envValue = System.getenv(StringUtils.upperCase(fieldName));
+                    if (envValue != null) {
+                        try {
+                            field.set(testConfigure, envValue);
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
                 return testConfigure;
             }
         }
-
     }
 }
