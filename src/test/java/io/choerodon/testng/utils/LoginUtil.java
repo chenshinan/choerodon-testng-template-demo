@@ -41,21 +41,21 @@ public class LoginUtil {
      * Api测试授权认证，将获取到的token设置到全局请求中
      */
     public static void login(){
-        Reporter.log("Parse profile.....", true);
+        System.out.println("Parse profile.....");
         TestConfigure testConfigure = TestConfigureParse.getConfigure();
-        Reporter.log(testConfigure.toString());
+        System.out.println(testConfigure.toString());
         Assert.assertNotEquals(testConfigure.getDomainUri(), null, "The domainUri cannot be empty");
         Assert.assertNotEquals(testConfigure.getApiGateway(), null, "The apiGateWay cannot be empty");
         RestAssured.baseURI = testConfigure.getApiGateway();
         try {
-            Reporter.log("Start login.....", true);
+            System.out.println("Start login.....");
             Response loginResponse = given()
                     .formParam(USER_NAME, testConfigure.getUsername())
                     .formParam(PASSWORD, encodePassword(testConfigure.getPassword()))
                     .expect().statusCode(302).when()
                     .post(LOGIN_PATH).then().extract().response();
             final String cookie = loginResponse.getCookie(SESSION);
-            Reporter.log("Get cookie successfully：" + cookie, true);
+            System.out.println("Get cookie successfully：" + cookie);
             Response tokenResponse = given()
                     .header(COOKIE, SESSION + "=" + cookie)
                     .param(RESPONSE_TYPE, TOKEN)
@@ -67,7 +67,7 @@ public class LoginUtil {
                     .get(AUTHORIZE_PATH).then().extract().response();
             final String token = tokenResponse.getHeader(LOCATION).split(TOKEN_TYPE)[1].split(STATES)[0] + " " +
                     tokenResponse.getHeader(LOCATION).split(ACCESS_TOKEN)[1].split(TOKEN_TYPE)[0];
-            Reporter.log("Token token success：" + token, true);
+            System.out.println("Token token success：" + token);
             Filter filter = new Filter() {
                 public Response filter(FilterableRequestSpecification requestSpec, FilterableResponseSpecification responseSpec, FilterContext ctx) {
                     requestSpec.header(AUTHORIZATION, token);
@@ -76,9 +76,9 @@ public class LoginUtil {
             };
             //token设置到全局请求中
             RestAssured.filters(filter);
-            Reporter.log("Login authentication successful", true);
+            System.out.println("Login authentication successful");
         } catch (Exception e) {
-            Reporter.log("Login authentication failed", true);
+            System.out.println("Login authentication failed");
             throw new IllegalArgumentException(e);
         }
     }
