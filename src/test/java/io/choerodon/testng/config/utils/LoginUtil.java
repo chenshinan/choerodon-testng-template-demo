@@ -13,6 +13,7 @@ import static io.restassured.RestAssured.given;
 
 /**
  * @author shinan.chen
+ * @author dinghuang123@gmail.com
  * @since 2019/1/19
  */
 public class LoginUtil {
@@ -39,7 +40,7 @@ public class LoginUtil {
     /**
      * Api测试授权认证，将获取到的token设置到全局请求中
      */
-    public static void login(){
+    public static void login() {
         System.out.println("Parse profile.....");
         TestConfigure testConfigure = TestConfigureParse.getConfigure();
         System.out.println(testConfigure.toString());
@@ -81,8 +82,10 @@ public class LoginUtil {
             throw new IllegalArgumentException(e);
         }
     }
+
     /**
      * 密码发送前校验
+     *
      * @param password
      * @return
      */
