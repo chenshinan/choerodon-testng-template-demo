@@ -1,6 +1,5 @@
 package io.choerodon.testng.config;
 
-import org.testng.Reporter;
 import org.testng.TestNG;
 
 import java.net.URL;
@@ -25,7 +24,7 @@ public class TestExecution {
             e.printStackTrace();
         }
         // 可执行jar包运行的结果里包含".jar"
-        System.out.println("jar location:"+filePath);
+        System.out.println("jar location:" + filePath);
         TestNG testNG = new TestNG();
         testNG.setTestJar(filePath);
         // 默认testng.xml
