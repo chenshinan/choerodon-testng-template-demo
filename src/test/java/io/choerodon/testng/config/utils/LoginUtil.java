@@ -1,5 +1,6 @@
 package io.choerodon.testng.config.utils;
 
+import com.alibaba.fastjson.JSONObject;
 import io.choerodon.testng.config.domain.TestConfigure;
 import io.restassured.RestAssured;
 import io.restassured.filter.Filter;
@@ -8,6 +9,9 @@ import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
 import org.testng.Assert;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -71,6 +75,14 @@ public class LoginUtil {
             Filter filter = new Filter() {
                 public Response filter(FilterableRequestSpecification requestSpec, FilterableResponseSpecification responseSpec, FilterContext ctx) {
                     requestSpec.header(AUTHORIZATION, token);
+                    //将输入参数加入到报告中
+                    Map<String,Object> requestData =  new HashMap<String, Object>();
+                    requestData.put("method",requestSpec.getMethod());
+                    requestData.put("queryParams",requestSpec.getQueryParams());
+                    requestData.put("pathParams",requestSpec.getPathParams());
+                    requestData.put("uri",requestSpec.getURI());
+                    requestData.put("body",requestSpec.getBody());
+                    ReporterUtil.inputData(JSONObject.toJSONString(requestData));
                     return ctx.next(requestSpec, responseSpec);
                 }
             };
