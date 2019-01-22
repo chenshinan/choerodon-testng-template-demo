@@ -62,7 +62,7 @@ public class ApiTest extends TestBase {
                 //断言所有作者名称的长度之和大于50
                 //.body("store.book.author.collect { it.length() }.sum()", greaterThan(50))
                 .and().body("activeSprint.sprintId", equalTo(1033))
-                //可选选项，如果不获取请求踢就不用导出请求体
+                //可选选项，如果不获取请求体就不用导出请求体
                 .extract().response();
         //获取创建成功的问题id
         Long issueId = Long.parseLong(response.path("issueId").toString());

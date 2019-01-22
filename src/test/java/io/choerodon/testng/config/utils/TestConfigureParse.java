@@ -1,8 +1,7 @@
-package io.choerodon.testng.utils;
+package io.choerodon.testng.config.utils;
 
 import io.choerodon.testng.config.domain.TestConfigure;
 import org.apache.commons.lang3.StringUtils;
-import org.testng.Reporter;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
@@ -11,8 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * @author dinghuang123@gmail.com

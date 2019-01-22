@@ -1,16 +1,12 @@
 package io.choerodon.testng.test;
 
 import io.choerodon.testng.config.TestBase;
-import io.choerodon.testng.utils.ReporterUtil;
+import io.choerodon.testng.config.utils.ReporterUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
-import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.lessThan;
 
 /**
  * api测试采用了rest-assured框架

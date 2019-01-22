@@ -1,17 +1,7 @@
 package io.choerodon.testng.config;
 
-import io.choerodon.testng.utils.LoginUtil;
-import io.choerodon.testng.utils.TestConfigureParse;
-import io.restassured.RestAssured;
-import io.restassured.filter.Filter;
-import io.restassured.filter.FilterContext;
-import io.restassured.response.Response;
-import io.restassured.specification.FilterableRequestSpecification;
-import io.restassured.specification.FilterableResponseSpecification;
-import org.testng.Assert;
-import org.testng.Reporter;
+import io.choerodon.testng.config.utils.LoginUtil;
 import org.testng.annotations.BeforeClass;
-import io.choerodon.testng.config.domain.TestConfigure;
 
 import static io.restassured.RestAssured.given;
 

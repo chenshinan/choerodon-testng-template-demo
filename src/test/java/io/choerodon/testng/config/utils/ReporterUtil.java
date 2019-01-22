@@ -1,4 +1,4 @@
-package io.choerodon.testng.utils;
+package io.choerodon.testng.config.utils;
 
 import org.testng.Reporter;
 

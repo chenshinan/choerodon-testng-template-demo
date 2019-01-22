@@ -1,4 +1,4 @@
-package io.choerodon.testng.utils;
+package io.choerodon.testng.config.utils;
 
 import io.choerodon.testng.config.domain.TestConfigure;
 import io.restassured.RestAssured;
@@ -8,7 +8,6 @@ import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
 import org.testng.Assert;
-import org.testng.Reporter;
 
 import static io.restassured.RestAssured.given;
 
