@@ -1,5 +1,3 @@
-FROM registry.cn-hangzhou.aliyuncs.com/choerodon-tools/javabase:0.5.0
-COPY app-tests.jar run.sh /app/
-WORKDIR /app
-RUN chmod +x run.sh
+FROM registry.cn-hangzhou.aliyuncs.com/choerodon-tools/javabase:0.7.1
+COPY app-tests.jar /{{service.code}}.jar
 ENTRYPOINT ["./run.sh"]

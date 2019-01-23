@@ -50,7 +50,5 @@ public class ApiTest extends TestBase {
                         "\"issueTypeId\":116,\"typeCode\":\"story\",\"parentIssueId\":0}")
                 .post("/agile/v1/projects/" + projectId + "/issues").then().assertThat().statusCode(201)
                 .time(lessThan(200L)).and().log().ifError().log().body().body("applyType", equalTo("agile"));
-
-
     }
 }

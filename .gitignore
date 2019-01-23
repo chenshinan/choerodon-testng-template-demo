@@ -21,11 +21,13 @@ target/
 *.tmp
 /temp
 /tmp
-test-output/
-app-tests.jar
+app.jar
 
 # system ignore
 .DS_Store
 Thumbs.db
 
 gitlabci/.generated
+
+/bin
+src/main/resources/application-default.yml

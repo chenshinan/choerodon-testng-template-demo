@@ -5,11 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: ""
+  repository: registry.cn-hangzhou.aliyuncs.com/{{group.name}}/{{service.code}}
   pullPolicy: Always
-
-config:
-  port: 8080
 
 env:
   open:
@@ -18,6 +15,9 @@ env:
     DOMAINURI: http://service.choerodon.staging.saas.hand-china.com
     LOGINNAME: AutomationTestUser
     PASSWORD: 123456
+
+job:
+  activeDeadlineSeconds: 1200
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
