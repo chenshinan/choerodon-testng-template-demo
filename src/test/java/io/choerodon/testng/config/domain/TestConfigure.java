@@ -12,7 +12,7 @@ public class TestConfigure {
 
     private String apiGateway;
 
-    private String projectId;
+    private Long projectId;
 
     public String getUsername() {
         return username;
@@ -38,11 +38,11 @@ public class TestConfigure {
         this.apiGateway = apiGateway;
     }
 
-    public String getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(String projectId) {
+    public void setProjectId(Long projectId) {
         this.projectId = projectId;
     }
 
@@ -51,6 +51,7 @@ public class TestConfigure {
         return "TestConfigure{" + "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", apiGateway='" + apiGateway + '\'' +
+                ", projectId='" + projectId + '\'' +
                 '}';
     }
 }

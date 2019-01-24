@@ -25,7 +25,7 @@ import static io.restassured.RestAssured.given;
 @Test
 public class ApiTest extends TestBase {
     private TestConfigure testConfigure = TestConfigureParse.getConfigure();
-    private final Long projectId = Long.valueOf(testConfigure.getProjectId());
+    private final Long projectId = testConfigure.getProjectId();
 
     @Test(description = "创建issue")
     public void createIssue() {
