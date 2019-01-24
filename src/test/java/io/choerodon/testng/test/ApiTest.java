@@ -1,6 +1,8 @@
 package io.choerodon.testng.test;
 
 import io.choerodon.testng.config.TestBase;
+import io.choerodon.testng.config.domain.TestConfigure;
+import io.choerodon.testng.config.utils.TestConfigureParse;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -22,7 +24,9 @@ import static io.restassured.RestAssured.given;
  */
 @Test
 public class ApiTest extends TestBase {
-    private static final Long projectId = 340L;
+    private TestConfigure testConfigure = TestConfigureParse.getConfigure();
+    private final Long projectId = Long.valueOf(testConfigure.getProjectId());
+
     @Test(description = "创建issue")
     public void createIssue() {
         //准备数据
@@ -44,7 +48,7 @@ public class ApiTest extends TestBase {
                 //请求参数
                 .queryParam("applyType", "agile")
                 //请求体，可以直接放json字符串，也可以.body(jsonAsMap)
-                .body("{\"priorityCode\":\"priority-58\",\"priorityId\":58,\"projectId\":\"340\",\"sprintId\":1033,\"summary\":\"丁煌测试2\",\"issueTypeId\":116,\"typeCode\":\"story\",\"parentIssueId\":0}")
+                .body("{\"priorityCode\":\"priority-58\",\"priorityId\":58,\"projectId\":\""+ projectId + "\",\"sprintId\":1033,\"summary\":\"丁煌测试2\",\"issueTypeId\":116,\"typeCode\":\"story\",\"parentIssueId\":0}")
                 //请求路径
                 .post("/agile/v1/projects/" + projectId + "/issues").then()
                 //开始断言，断言的结果会在报告中体现

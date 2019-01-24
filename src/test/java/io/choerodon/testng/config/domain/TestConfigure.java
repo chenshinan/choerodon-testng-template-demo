@@ -12,6 +12,8 @@ public class TestConfigure {
 
     private String apiGateway;
 
+    private String projectId;
+
     public String getUsername() {
         return username;
     }
@@ -34,6 +36,14 @@ public class TestConfigure {
 
     public void setApiGateway(String apiGateway) {
         this.apiGateway = apiGateway;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     @Override

@@ -107,7 +107,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>io.choerodon.testng.config.TestExecution</mainClass>
+                                    <mainClass>io.choerodon.testng.TestExecution</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

@@ -12,6 +12,7 @@ env:
   open:
     RESULTGATEWAY: http://api.example.choerodon.io
     APIGATEWAY: http://api.example.choerodon.io
+    PROJECTID: 1
     LOGINNAME: AutomationTestUser
     PASSWORD: 123456
 

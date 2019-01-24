@@ -1,4 +1,4 @@
-package io.choerodon.testng.config;
+package io.choerodon.testng;
 
 import org.testng.TestNG;
 

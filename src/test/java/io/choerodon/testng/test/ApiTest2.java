@@ -23,7 +23,7 @@ public class ApiTest2 extends TestBase {
         //测试数据
         ReporterUtil.inputData("无");
         //预期结果
-        ReporterUtil.expectData("无");
+        ReporterUtil.expectData("用户登录成功");
         //状态码验证
         Response response = given().accept(ContentType.JSON).
                 contentType(ContentType.JSON).
