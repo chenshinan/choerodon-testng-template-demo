@@ -34,7 +34,7 @@ public class LoginUtil {
     private static final String REDIRECT_URI = "redirect_uri";
     private static final String AUTHORIZE_PATH = "/oauth/oauth/authorize";
     private static final String TOKEN = "token";
-    private static final String AGITSM = "agitsm";
+    private static final String CLIENT = "client";
     private static final String LOCATION = "Location";
     private static final String AUTHORIZATION = "Authorization";
     private static final String TOKEN_TYPE = "&token_type=";
@@ -48,7 +48,6 @@ public class LoginUtil {
         System.out.println("Parse profile.....");
         TestConfigure testConfigure = TestConfigureParse.getConfigure();
         System.out.println(testConfigure.toString());
-        Assert.assertNotEquals(testConfigure.getDomainUri(), null, "The domainUri cannot be empty");
         Assert.assertNotEquals(testConfigure.getApiGateway(), null, "The apiGateWay cannot be empty");
         RestAssured.baseURI = testConfigure.getApiGateway();
         try {
@@ -59,13 +58,13 @@ public class LoginUtil {
                     .expect().statusCode(302).when()
                     .post(LOGIN_PATH).then().extract().response();
             final String cookie = loginResponse.getCookie(SESSION);
-            System.out.println("Get cookie successfully：" + cookie);
+            System.out.println("Get cookie successfully:" + cookie);
             Response tokenResponse = given()
                     .header(COOKIE, SESSION + "=" + cookie)
                     .param(RESPONSE_TYPE, TOKEN)
-                    .param(CLIENT_ID, AGITSM)
+                    .param(CLIENT_ID, CLIENT)
                     .param(STATE, "").redirects().follow(true)
-                    .param(REDIRECT_URI, testConfigure.getDomainUri())
+                    .param(REDIRECT_URI, "http://choerodon.io")
                     .redirects().follow(false)
                     .expect().statusCode(302).when()
                     .get(AUTHORIZE_PATH).then().extract().response();

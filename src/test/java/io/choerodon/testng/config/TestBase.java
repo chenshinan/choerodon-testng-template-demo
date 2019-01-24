@@ -1,6 +1,6 @@
 package io.choerodon.testng.config;
 
-import io.choerodon.testng.utils.LoginUtil;
+import io.choerodon.testng.config.utils.LoginUtil;
 import org.testng.annotations.BeforeClass;
 
 /**

@@ -1,7 +1,7 @@
 package io.choerodon.testng.test;
 
 import io.choerodon.testng.config.TestBase;
-import io.choerodon.testng.utils.ReporterUtil;
+import io.choerodon.testng.config.utils.ReporterUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;

@@ -12,8 +12,6 @@ public class TestConfigure {
 
     private String apiGateway;
 
-    private String domainUri;
-
     public String getUsername() {
         return username;
     }
@@ -38,20 +36,11 @@ public class TestConfigure {
         this.apiGateway = apiGateway;
     }
 
-    public String getDomainUri() {
-        return domainUri;
-    }
-
-    public void setDomainUri(String domainUri) {
-        this.domainUri = domainUri;
-    }
-
     @Override
     public String toString() {
         return "TestConfigure{" + "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", apiGateway='" + apiGateway + '\'' +
-                ", domainUri='" + domainUri + '\'' +
                 '}';
     }
 }

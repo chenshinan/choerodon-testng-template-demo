@@ -1,4 +1,3 @@
 username: AutomationTestUser
 password: 123456
 apiGateway: http://api.staging.saas.hand-china.com
-domainUri: http://service.choerodon.staging.saas.hand-china.com
