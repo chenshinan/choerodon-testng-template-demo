@@ -1,4 +1,4 @@
-package io.choerodon.testng.test;
+package io.choerodon.testng.demo.assured;
 
 import io.choerodon.testng.config.TestBase;
 import io.choerodon.testng.config.domain.TestConfigure;

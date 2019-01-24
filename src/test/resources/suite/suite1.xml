@@ -2,8 +2,8 @@
 <suite name="suite1" verbose="1">
     <test name="testConfigure1" parallel="false">
         <classes>
-            <class name="io.choerodon.testng.test.ApiTest"/>
-            <class name="io.choerodon.testng.test.ApiTest2">
+            <class name="io.choerodon.testng.demo.assured.ApiTest"/>
+            <class name="io.choerodon.testng.demo.assured.ApiTest2">
                 <methods>
                     <include name="querySelf"/>
                 </methods>

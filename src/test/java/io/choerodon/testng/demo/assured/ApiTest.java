@@ -1,4 +1,4 @@
-package io.choerodon.testng.test;
+package io.choerodon.testng.demo.assured;
 
 import io.choerodon.testng.config.TestBase;
 import io.choerodon.testng.config.domain.TestConfigure;
@@ -8,10 +8,6 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.given;
 

@@ -1,4 +1,4 @@
-package io.choerodon.testng.demo;
+package io.choerodon.testng.demo.ngnative;
 
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
