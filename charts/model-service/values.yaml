@@ -8,6 +8,8 @@ image:
   repository: registry.cn-hangzhou.aliyuncs.com/{{group.name}}/{{service.code}}
   pullPolicy: Always
 
+framework: TestNG
+
 env:
   open:
     RESULTGATEWAY: http://api.example.choerodon.io

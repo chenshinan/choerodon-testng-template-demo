@@ -1,7 +1,9 @@
 package io.choerodon.testng.test;
 
 import io.choerodon.testng.config.TestBase;
+import io.choerodon.testng.config.domain.TestConfigure;
 import io.choerodon.testng.config.utils.ReporterUtil;
+import io.choerodon.testng.config.utils.TestConfigureParse;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -17,11 +19,12 @@ import static io.restassured.RestAssured.given;
  */
 @Test
 public class ApiTest2 extends TestBase {
+    private TestConfigure testConfigure = TestConfigureParse.getConfigure();
 
     @Test(description = "登录后查询用户")
     public void querySelf() {
         //测试数据
-        ReporterUtil.inputData("无");
+        ReporterUtil.inputData("User: " + testConfigure.getUsername() + ", Password: " + testConfigure.getPassword());
         //预期结果
         ReporterUtil.expectData("用户登录成功");
         //状态码验证

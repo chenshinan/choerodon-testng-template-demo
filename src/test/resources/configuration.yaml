@@ -1,4 +1,4 @@
 username: AutomationTestUser
 password: 123456
-apiGateway: http://api.staging.saas.hand-china.com
-projectId: 340
+apiGateway: http://api.example.choerodon.io
+projectId: 1
