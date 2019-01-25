@@ -1,8 +1,10 @@
 package io.choerodon.testng.config.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import io.choerodon.testng.config.domain.BodyMatcherExtend;
 import io.choerodon.testng.config.domain.TestConfigure;
 import io.restassured.RestAssured;
+import io.restassured.assertion.BodyMatcher;
 import io.restassured.assertion.BodyMatcherGroup;
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
@@ -12,6 +14,7 @@ import io.restassured.specification.FilterableResponseSpecification;
 import org.testng.Assert;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +46,13 @@ public class LoginUtil {
     private static final String TOKEN_TYPE = "&token_type=";
     private static final String ACCESS_TOKEN = "access_token=";
     private static final String STATES = "&state=";
+    private static final String BODY_MATCHERS = "bodyMatchers";
+    private static final String BODY_ASSERTIONS = "bodyAssertions";
+    private static final String METHOD = "method";
+    private static final String QUERY_PARAMS = "queryParams";
+    private static final String PATH_PARAMS = "pathParams";
+    private static final String URI = "uri";
+    private static final String BODY = "body";
 
     /**
      * Api测试授权认证，将获取到的token设置到全局请求中
@@ -100,15 +110,22 @@ public class LoginUtil {
     @SuppressWarnings("unchecked")
     private static void getResponseData(FilterableResponseSpecification responseSpec) {
         try {
-            Field bodyMatchers = responseSpec.getClass().getDeclaredField("bodyMatchers");
+            Field bodyMatchers = responseSpec.getClass().getDeclaredField(BODY_MATCHERS);
             bodyMatchers.setAccessible(true);
             try {
                 BodyMatcherGroup bodyMatcherGroup = (BodyMatcherGroup) bodyMatchers.get(responseSpec);
-                Field bodyAssertions = bodyMatcherGroup.getClass().getDeclaredField("bodyAssertions");
+                Field bodyAssertions = bodyMatcherGroup.getClass().getDeclaredField(BODY_ASSERTIONS);
                 bodyAssertions.setAccessible(true);
-                Map<String, Object> reponseData = new HashMap<String, Object>();
-                reponseData.put("expectData", bodyAssertions.get(bodyMatcherGroup));
-                ReporterUtil.expectData(JSONObject.toJSONString(reponseData));
+                List<BodyMatcher> list = (List<BodyMatcher>) bodyAssertions.get(bodyMatcherGroup);
+                List<BodyMatcherExtend> bodyMatcherExtends = new ArrayList<BodyMatcherExtend>(list.size());
+               for (BodyMatcher bodyMatcher :list){
+                   BodyMatcherExtend bodyMatcherExtend = new BodyMatcherExtend();
+                   bodyMatcherExtend.setKey(bodyMatcher.getKey().toString());
+                   //todo 这里的matcher的toString方法需要改进，没法根据给定的类型生成对应的字符串
+                   bodyMatcherExtend.setValue(bodyMatcher.getMatcher().toString());
+                   bodyMatcherExtends.add(bodyMatcherExtend);
+               }
+                ReporterUtil.expectData(JSONObject.toJSONString(bodyMatcherExtends));
             } catch (IllegalAccessException e) {
                 throw new IllegalArgumentException(e);
             }
@@ -123,12 +140,12 @@ public class LoginUtil {
      * @param requestSpec requestSpec
      */
     private static void getRequestData(FilterableRequestSpecification requestSpec) {
-        Map<String, Object> requestData = new HashMap<String, Object>();
-        requestData.put("method", requestSpec.getMethod());
-        requestData.put("queryParams", requestSpec.getQueryParams());
-        requestData.put("pathParams", requestSpec.getPathParams());
-        requestData.put("uri", requestSpec.getURI());
-        requestData.put("body", requestSpec.getBody());
+        Map<String, Object> requestData = new HashMap<String, Object>(5);
+        requestData.put(METHOD, requestSpec.getMethod());
+        requestData.put(QUERY_PARAMS, requestSpec.getQueryParams());
+        requestData.put(PATH_PARAMS, requestSpec.getPathParams());
+        requestData.put(URI, requestSpec.getURI());
+        requestData.put(BODY, requestSpec.getBody());
         ReporterUtil.inputData(JSONObject.toJSONString(requestData));
     }
 
