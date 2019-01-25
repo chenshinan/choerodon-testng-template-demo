@@ -53,9 +53,21 @@ public class ApiTest extends TestBase {
                 .queryParam("applyType", "agile")
                 //请求体，可以直接放json字符串，也可以.body(jsonAsMap)
                 .body("{\"priorityCode\":\"priority-58\",\"priorityId\":58,\"projectId\":\"340\",\"sprintId\":1033,\"summary\":\"丁煌测试2\",\"issueTypeId\":116,\"typeCode\":\"story\",\"parentIssueId\":0}")
+                //==============================!!!!!!!!!!!!发请求之前去判断期望值，这种方式可以写入测试用例的预期结果中，推荐这种写法
+                .expect().statusCode(201)
+                //请求时间断言，>2080L失败
+                .time(lessThan(2080L))
+                //响应体中json字符串断言，查找返回json中的applyType对应的值是否等于agile
+                .and().body("applyType", equalTo("agile"))
+                //支持路径匹配，高级用法例如：断言价格低于10的书籍的标题是“世纪的谚语”和“白鲸记”
+//                .body("store.book.findAll { it.price < 10 }.title", hasItems("Sayings of the Century", "Moby Dick"))
+                //断言所有作者名称的长度之和大于50
+                //.body("store.book.author.collect { it.length() }.sum()", greaterThan(50))
+                .and().body("activeSprint.sprintId", equalTo(null))
+                .when()
                 //请求路径
                 .post("/agile/v1/projects/" + projectId + "/issues").then()
-                //开始断言，断言的结果会在报告中体现
+                //==============================!!!!!!!!!!!!发请求拿到结果后判断期望值，这种方式不能写入测试用例的预期结果中，不推荐这种写法
                 .assertThat()
                 //状态码断言
                 .statusCode(201)
@@ -67,7 +79,7 @@ public class ApiTest extends TestBase {
 //                .body("store.book.findAll { it.price < 10 }.title", hasItems("Sayings of the Century", "Moby Dick"))
                 //断言所有作者名称的长度之和大于50
                 //.body("store.book.author.collect { it.length() }.sum()", greaterThan(50))
-                .and().body("activeSprint.sprintId", equalTo(1033))
+                .and().body("activeSprint.sprintId", equalTo(null))
                 //可选选项，如果不获取请求体就不用导出请求体
                 .extract().response();
         //获取创建成功的问题id

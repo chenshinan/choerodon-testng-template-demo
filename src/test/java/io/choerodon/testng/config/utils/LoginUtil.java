@@ -3,6 +3,7 @@ package io.choerodon.testng.config.utils;
 import com.alibaba.fastjson.JSONObject;
 import io.choerodon.testng.config.domain.TestConfigure;
 import io.restassured.RestAssured;
+import io.restassured.assertion.BodyMatcherGroup;
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
 import io.restassured.response.Response;
@@ -10,7 +11,9 @@ import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
 import org.testng.Assert;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -75,14 +78,8 @@ public class LoginUtil {
             Filter filter = new Filter() {
                 public Response filter(FilterableRequestSpecification requestSpec, FilterableResponseSpecification responseSpec, FilterContext ctx) {
                     requestSpec.header(AUTHORIZATION, token);
-                    //将输入参数加入到报告中
-                    Map<String,Object> requestData =  new HashMap<String, Object>();
-                    requestData.put("method",requestSpec.getMethod());
-                    requestData.put("queryParams",requestSpec.getQueryParams());
-                    requestData.put("pathParams",requestSpec.getPathParams());
-                    requestData.put("uri",requestSpec.getURI());
-                    requestData.put("body",requestSpec.getBody());
-                    ReporterUtil.inputData(JSONObject.toJSONString(requestData));
+                    getRequestData(requestSpec);
+                    getResponseData(responseSpec);
                     return ctx.next(requestSpec, responseSpec);
                 }
             };
@@ -93,6 +90,46 @@ public class LoginUtil {
             System.out.println("Login authentication failed");
             throw new IllegalArgumentException(e);
         }
+    }
+
+    /**
+     * 将期望参数加入到报告中
+     *
+     * @param responseSpec responseSpec
+     */
+    @SuppressWarnings("unchecked")
+    private static void getResponseData(FilterableResponseSpecification responseSpec) {
+        try {
+            Field bodyMatchers = responseSpec.getClass().getDeclaredField("bodyMatchers");
+            bodyMatchers.setAccessible(true);
+            try {
+                BodyMatcherGroup bodyMatcherGroup = (BodyMatcherGroup) bodyMatchers.get(responseSpec);
+                Field bodyAssertions = bodyMatcherGroup.getClass().getDeclaredField("bodyAssertions");
+                bodyAssertions.setAccessible(true);
+                Map<String, Object> reponseData = new HashMap<String, Object>();
+                reponseData.put("expectData", bodyAssertions.get(bodyMatcherGroup));
+                ReporterUtil.expectData(JSONObject.toJSONString(reponseData));
+            } catch (IllegalAccessException e) {
+                throw new IllegalArgumentException(e);
+            }
+        } catch (NoSuchFieldException e) {
+            throw new IllegalArgumentException(e);
+        }
+    }
+
+    /**
+     * 将输入参数加入到报告中
+     *
+     * @param requestSpec requestSpec
+     */
+    private static void getRequestData(FilterableRequestSpecification requestSpec) {
+        Map<String, Object> requestData = new HashMap<String, Object>();
+        requestData.put("method", requestSpec.getMethod());
+        requestData.put("queryParams", requestSpec.getQueryParams());
+        requestData.put("pathParams", requestSpec.getPathParams());
+        requestData.put("uri", requestSpec.getURI());
+        requestData.put("body", requestSpec.getBody());
+        ReporterUtil.inputData(JSONObject.toJSONString(requestData));
     }
 
     /**
