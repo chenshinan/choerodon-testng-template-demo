@@ -149,7 +149,7 @@ public class LoginUtil {
     }
 
     /**
-     * 密码发送前校验
+     * 密码明文加密
      *
      * @param password
      * @return
