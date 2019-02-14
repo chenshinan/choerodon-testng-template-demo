@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 /**
  * api测试采用了rest-assured框架
  *
- * @author dinghuang123@gmail.com
+ * @author shinan.chen
  * @see <a href="https://testerhome.com/topics/7060</a> 具体用法
  * @since 2019/1/17
  */
